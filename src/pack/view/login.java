@@ -38,49 +38,74 @@ public class login extends javax.swing.JFrame {
 
         jTextField1 = new javax.swing.JTextField();
         jj = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtnama = new javax.swing.JTextField();
         txtpass = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
+        jj.setBackground(new java.awt.Color(0, 153, 153));
         jj.setLayout(null);
 
+        jLabel2.setFont(new java.awt.Font("Schadow BT", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Password");
+        jj.add(jLabel2);
+        jLabel2.setBounds(110, 180, 80, 20);
+        jj.add(txtnama);
+        txtnama.setBounds(210, 130, 140, 30);
+        jj.add(txtpass);
+        txtpass.setBounds(210, 180, 140, 30);
+
+        jLabel3.setFont(new java.awt.Font("Schadow BT", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Username");
+        jj.add(jLabel3);
+        jLabel3.setBounds(110, 130, 80, 20);
+
+        jPanel1.setBackground(new java.awt.Color(0, 51, 102));
+        jPanel1.setLayout(null);
+
+        jButton1.setBackground(new java.awt.Color(51, 255, 204));
+        jButton1.setFont(new java.awt.Font("Stencil", 0, 10)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Sign In");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jj.add(jButton1);
-        jButton1.setBounds(127, 34, 65, 23);
+        jPanel1.add(jButton1);
+        jButton1.setBounds(155, 10, 80, 30);
 
+        jButton2.setBackground(new java.awt.Color(51, 255, 204));
+        jButton2.setFont(new java.awt.Font("Stencil", 0, 10)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Sign Up");
-        jj.add(jButton2);
-        jButton2.setBounds(260, 40, 73, 23);
+        jPanel1.add(jButton2);
+        jButton2.setBounds(230, 10, 80, 30);
 
-        jLabel1.setText("Password");
+        jj.add(jPanel1);
+        jPanel1.setBounds(0, 30, 470, 50);
+
+        jLabel1.setFont(new java.awt.Font("Segoe Script", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Login");
         jj.add(jLabel1);
-        jLabel1.setBounds(40, 160, 80, 20);
-
-        jLabel2.setText("Username");
-        jj.add(jLabel2);
-        jLabel2.setBounds(40, 120, 80, 20);
-        jj.add(txtnama);
-        txtnama.setBounds(140, 120, 140, 30);
-        jj.add(txtpass);
-        txtpass.setBounds(140, 170, 140, 30);
+        jLabel1.setBounds(170, 290, 130, 40);
 
         getContentPane().add(jj);
-        jj.setBounds(0, 0, 400, 300);
+        jj.setBounds(0, 0, 470, 360);
 
-        pack();
+        setBounds(0, 0, 485, 399);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -151,6 +176,8 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel jj;
     private javax.swing.JTextField txtnama;

@@ -41,10 +41,6 @@ public class home extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         Btn_Simpan = new javax.swing.JButton();
         Btn_Ubah = new javax.swing.JButton();
@@ -69,6 +65,10 @@ public class home extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         cbCariKategori = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -86,6 +86,161 @@ public class home extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
+        jPanel2.setBackground(new java.awt.Color(0, 0, 102));
+        jPanel2.setLayout(null);
+
+        Btn_Simpan.setBackground(new java.awt.Color(51, 255, 255));
+        Btn_Simpan.setText("Simpan");
+        Btn_Simpan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_SimpanActionPerformed(evt);
+            }
+        });
+        jPanel2.add(Btn_Simpan);
+        Btn_Simpan.setBounds(30, 130, 90, 23);
+
+        Btn_Ubah.setBackground(new java.awt.Color(51, 255, 255));
+        Btn_Ubah.setText("Ubah");
+        Btn_Ubah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_UbahActionPerformed(evt);
+            }
+        });
+        jPanel2.add(Btn_Ubah);
+        Btn_Ubah.setBounds(30, 200, 90, 23);
+
+        Btn_Bersih.setBackground(new java.awt.Color(51, 255, 255));
+        Btn_Bersih.setText("Bersihkan");
+        Btn_Bersih.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_BersihActionPerformed(evt);
+            }
+        });
+        jPanel2.add(Btn_Bersih);
+        Btn_Bersih.setBounds(30, 260, 90, 23);
+
+        Btn_Hapus.setBackground(new java.awt.Color(51, 255, 255));
+        Btn_Hapus.setText("Hapus");
+        Btn_Hapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_HapusActionPerformed(evt);
+            }
+        });
+        jPanel2.add(Btn_Hapus);
+        Btn_Hapus.setBounds(30, 330, 90, 23);
+
+        Btn_Keluar.setBackground(new java.awt.Color(51, 255, 255));
+        Btn_Keluar.setText("Keluar");
+        Btn_Keluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_KeluarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(Btn_Keluar);
+        Btn_Keluar.setBounds(30, 400, 90, 23);
+
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(0, 0, 140, 590);
+
+        jPanel3.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel3.setLayout(null);
+
+        jPanel4.setLayout(null);
+        jPanel4.add(txtharga);
+        txtharga.setBounds(110, 180, 190, 30);
+
+        txtkode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtkodeActionPerformed(evt);
+            }
+        });
+        jPanel4.add(txtkode);
+        txtkode.setBounds(110, 20, 190, 30);
+        jPanel4.add(txtnama);
+        txtnama.setBounds(110, 60, 190, 30);
+
+        cbJenis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Pilih Jenis Packaging--", "Plastik", "Pack" }));
+        jPanel4.add(cbJenis);
+        cbJenis.setBounds(110, 140, 190, 30);
+
+        cbKategoriBrg.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Pilih Kategori Barang--", "Makanan", "Minuman" }));
+        jPanel4.add(cbKategoriBrg);
+        cbKategoriBrg.setBounds(110, 100, 190, 30);
+
+        jLabel5.setText("Kode Barang");
+        jPanel4.add(jLabel5);
+        jLabel5.setBounds(20, 20, 80, 20);
+
+        jLabel6.setText("Nama Barang");
+        jPanel4.add(jLabel6);
+        jLabel6.setBounds(20, 60, 70, 30);
+
+        jLabel7.setText("Kategori Barang");
+        jPanel4.add(jLabel7);
+        jLabel7.setBounds(20, 100, 80, 30);
+
+        jLabel8.setText("Jenis Packaging");
+        jPanel4.add(jLabel8);
+        jLabel8.setBounds(20, 140, 80, 30);
+
+        jLabel9.setText("Harga");
+        jPanel4.add(jLabel9);
+        jLabel9.setBounds(20, 180, 70, 20);
+
+        jPanel3.add(jPanel4);
+        jPanel4.setBounds(20, 100, 560, 230);
+
+        jPanel5.setLayout(null);
+
+        Tabel1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Kode Barang", "Nama Barang", "Kategori", "Packaging", "Harga"
+            }
+        ));
+        Tabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tabel1MouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(Tabel1);
+
+        jPanel5.add(jScrollPane2);
+        jScrollPane2.setBounds(10, 20, 530, 170);
+
+        jPanel3.add(jPanel5);
+        jPanel5.setBounds(20, 380, 560, 200);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Search Items" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jComboBox1);
+        jComboBox1.setBounds(330, 340, 110, 30);
+
+        jLabel4.setFont(new java.awt.Font("SketchFlow Print", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Pencarian Berdasarkan Kategori");
+        jPanel3.add(jLabel4);
+        jLabel4.setBounds(20, 340, 300, 40);
+
+        cbCariKategori.setBackground(new java.awt.Color(204, 204, 255));
+        cbCariKategori.setText("cari");
+        cbCariKategori.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbCariKategoriActionPerformed(evt);
+            }
+        });
+        jPanel3.add(cbCariKategori);
+        cbCariKategori.setBounds(470, 340, 80, 23);
+
         jPanel1.setBackground(new java.awt.Color(255, 204, 51));
         jPanel1.setLayout(null);
 
@@ -101,157 +256,15 @@ public class home extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Gisha", 1, 24)); // NOI18N
         jLabel3.setText("Data Barang Di Toko");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(250, 20, 300, 40);
+        jLabel3.setBounds(200, 10, 300, 40);
 
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, -7, 750, 80);
-
-        jPanel2.setBackground(new java.awt.Color(0, 0, 102));
-        jPanel2.setLayout(null);
-
-        Btn_Simpan.setText("Simpan");
-        Btn_Simpan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_SimpanActionPerformed(evt);
-            }
-        });
-        jPanel2.add(Btn_Simpan);
-        Btn_Simpan.setBounds(30, 40, 90, 23);
-
-        Btn_Ubah.setText("Ubah");
-        Btn_Ubah.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_UbahActionPerformed(evt);
-            }
-        });
-        jPanel2.add(Btn_Ubah);
-        Btn_Ubah.setBounds(30, 110, 90, 23);
-
-        Btn_Bersih.setText("Bersihkan");
-        Btn_Bersih.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_BersihActionPerformed(evt);
-            }
-        });
-        jPanel2.add(Btn_Bersih);
-        Btn_Bersih.setBounds(30, 170, 90, 23);
-
-        Btn_Hapus.setText("Hapus");
-        Btn_Hapus.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_HapusActionPerformed(evt);
-            }
-        });
-        jPanel2.add(Btn_Hapus);
-        Btn_Hapus.setBounds(30, 240, 90, 23);
-
-        Btn_Keluar.setText("Keluar");
-        Btn_Keluar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_KeluarActionPerformed(evt);
-            }
-        });
-        jPanel2.add(Btn_Keluar);
-        Btn_Keluar.setBounds(30, 310, 90, 23);
-
-        getContentPane().add(jPanel2);
-        jPanel2.setBounds(0, 70, 140, 520);
-
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel3.setLayout(null);
-
-        jPanel4.setLayout(null);
-        jPanel4.add(txtharga);
-        txtharga.setBounds(110, 180, 190, 20);
-
-        txtkode.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtkodeActionPerformed(evt);
-            }
-        });
-        jPanel4.add(txtkode);
-        txtkode.setBounds(110, 30, 190, 20);
-        jPanel4.add(txtnama);
-        txtnama.setBounds(110, 60, 190, 20);
-
-        cbJenis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel4.add(cbJenis);
-        cbJenis.setBounds(110, 140, 180, 30);
-
-        cbKategoriBrg.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel4.add(cbKategoriBrg);
-        cbKategoriBrg.setBounds(110, 100, 180, 30);
-
-        jLabel5.setText("Kode Barang");
-        jPanel4.add(jLabel5);
-        jLabel5.setBounds(30, 30, 70, 14);
-
-        jLabel6.setText("Nama Barang");
-        jPanel4.add(jLabel6);
-        jLabel6.setBounds(30, 60, 70, 14);
-
-        jLabel7.setText("Kategori Barang");
-        jPanel4.add(jLabel7);
-        jLabel7.setBounds(20, 110, 80, 14);
-
-        jLabel8.setText("Jenis Packaging");
-        jPanel4.add(jLabel8);
-        jLabel8.setBounds(20, 150, 80, 14);
-
-        jLabel9.setText("Harga");
-        jPanel4.add(jLabel9);
-        jLabel9.setBounds(30, 180, 29, 14);
-
-        jPanel3.add(jPanel4);
-        jPanel4.setBounds(20, 20, 560, 230);
-
-        jPanel5.setLayout(null);
-
-        Tabel1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Kode Barang", "Nama Barang", "Kategori", "Packaging", "Harga"
-            }
-        ));
-        jScrollPane2.setViewportView(Tabel1);
-
-        jPanel5.add(jScrollPane2);
-        jScrollPane2.setBounds(10, 20, 530, 170);
-
-        jPanel3.add(jPanel5);
-        jPanel5.setBounds(20, 310, 560, 200);
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Search Items" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jComboBox1);
-        jComboBox1.setBounds(340, 260, 110, 30);
-
-        jLabel4.setText("Pencarian Berdasarkan Kategori");
-        jPanel3.add(jLabel4);
-        jLabel4.setBounds(60, 260, 220, 30);
-
-        cbCariKategori.setText("cari");
-        cbCariKategori.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbCariKategoriActionPerformed(evt);
-            }
-        });
-        jPanel3.add(cbCariKategori);
-        cbCariKategori.setBounds(490, 260, 49, 23);
+        jPanel3.add(jPanel1);
+        jPanel1.setBounds(0, 0, 600, 80);
 
         getContentPane().add(jPanel3);
-        jPanel3.setBounds(140, 70, 610, 520);
+        jPanel3.setBounds(140, 0, 600, 590);
 
-        pack();
+        setBounds(0, 0, 757, 636);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
@@ -294,6 +307,19 @@ public class home extends javax.swing.JFrame {
         // TODO add your handling code here:
     
     }//GEN-LAST:event_cbCariKategoriActionPerformed
+
+    private void Tabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tabel1MouseClicked
+        // TODO add your handling code here:
+        
+        int baris = Tabel1.getSelectedRow();
+        if(baris != -1){
+            txtkode.setText(Tabel1.getValueAt(baris, 0).toString());
+            txtnama.setText((String)Tabel1.getValueAt(baris, 1));
+            cbKategoriBrg.setSelectedItem(Tabel1.getValueAt(baris, 2));
+            cbJenis.setSelectedItem(Tabel1.getValueAt(baris, 3).toString());
+            txtharga.setText(Tabel1.getValueAt(baris, 4).toString());
+        }
+    }//GEN-LAST:event_Tabel1MouseClicked
 
     /**
      * @param args the command line arguments

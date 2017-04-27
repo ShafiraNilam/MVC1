@@ -38,14 +38,14 @@ public class controllerToko {
         hm.getTxtKode().setText("");
         hm.getTxtNama().setText("");
         hm.getTxtHarga().setText("");
-        hm.getCbKategori().setSelectedItem(null);
-        hm.getCbJenis().setSelectedItem(null); 
+        hm.getCbKategori().setSelectedItem("--Pilih Kategori Barang--");
+        hm.getCbJenis().setSelectedItem("--Pilih Jenis Packaging--"); 
     }
     
 //menghapus data yang dipilih
     public void Hapus(){
         if (!hm.getTxtKode().getText().trim().isEmpty()){
-            
+          
         }else{
             String kode = (hm.getTxtKode().getText());
             impToko.HapusData(kode);
@@ -85,8 +85,7 @@ public class controllerToko {
     hm.getCbKategori().setSelectedItem(lt.get(row).getkategori().toString());
     hm.getCbJenis().setSelectedItem(lt.get(row).getjenis().toString());
     hm.getTxtHarga().setText(lt.get(row).getharga().toString());
-    
-        
+
     }
 
     private void isiTableCariKategori() {

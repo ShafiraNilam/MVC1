@@ -28,7 +28,7 @@ public class daoToko implements implementToko {
     public String TampilData = "SELECT * FROM `barang`";
     public String UbahData = "UPDATE `barang` SET `Nama_Barang`=?, `Harga`=?, `Kategori`=?, `Jenis`=? Where `Kode_Barang`=?;";
     public String SimpanData = "INSERT INTO `barang` VALUES (?, ?, ?, ?, ?)";
-    public String HapusData = "DELETE FROM `barang`";
+    public String HapusData = "DELETE FROM `barang` WHERE `Kode_Barang`=?";
     public String CariKategori = "SELECT `Kode_Barang`, `Nama_Barang`, `Kategori`, `Jenis`, `Harga` FROM `barang` WHERE Kategori like ?";
     
     public daoToko(){
