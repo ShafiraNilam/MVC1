@@ -11,52 +11,51 @@ import javax.swing.table.AbstractTableModel;
  *
  * @author USER
  */
-public class tableModelToko {
+public class tableModelToko extends AbstractTableModel{
     List<m_toko>lt;
- public tableModelToko(List<m_toko> lt) 
- {
+    public tableModelToko(List<m_toko> lt) {
     this.lt=lt;
- }
- public int getRowCount() 
- {
-    return lt.size();
- }
- public int getColumnCount() 
- {
+    }
+
+    @Override
+    public int getRowCount() {
+    return lt.size(); 
+    }
+
+    @Override
+    public int getColumnCount() {
     return 5;
- }
- public String getColumnName(int column) 
- {
+    }
+    public String getColumnName(int column) {
     switch (column){
-    case 0:
-    return"Kode_Barang";
-    case 1:
-    return"Nama_Barang";
-    case 2:
-    return"Kategori";
-    case 3:
-    return"Jenis";
-    case 4:
-    return"Harga";
-    default:
-    return null;
- }
- }
- public Object getValueAt(int row, int column) 
- {
+        case 0:
+            return"Kode_Barang";
+        case 1:
+            return"Nama_Barang";
+        case 2:
+            return"Kategori";
+        case 3:
+            return"Jenis";
+        case 4:
+            return"Harga";
+        default:
+            return null;
+    }}
+    @Override
+    public Object getValueAt(int row, int column) {
     switch (column){
-    case 0:
-    return lt.get(row).getkode();
-    case 1:
-    return lt.get(row).getnama();
-    case 2:
-    return lt.get(row).getkategori();
-    case 3:
-    return lt.get(row).getjenis();
-    case 4:
-        return lt.get(row).getharga();
-    default:
-    return null;
- }
- }
+        case 0:
+            return lt.get(row).getkode();
+        case 1:
+            return lt.get(row).getnama();
+        case 2:
+            return lt.get(row).getkategori();
+        case 3:
+            return lt.get(row).getjenis();
+        case 4:
+            return lt.get(row).getharga();
+        default:
+            return null;
+    }   
+  }
 }

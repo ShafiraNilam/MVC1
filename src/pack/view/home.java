@@ -7,6 +7,10 @@ package pack.view;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 import pack.control.controllerToko;
 import pack.model.m_toko;
 
@@ -23,6 +27,7 @@ public class home extends javax.swing.JFrame {
     public home() {
         initComponents();
         ctoko = new controllerToko (this);
+        ctoko.isiTable();
     }
 
     /**
@@ -41,24 +46,29 @@ public class home extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        Btn_Simpan = new javax.swing.JButton();
+        Btn_Ubah = new javax.swing.JButton();
+        Btn_Bersih = new javax.swing.JButton();
+        Btn_Hapus = new javax.swing.JButton();
+        Btn_Keluar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        Kode = new javax.swing.JTextField();
-        Nama = new javax.swing.JTextField();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        txtharga = new javax.swing.JTextField();
+        txtkode = new javax.swing.JTextField();
+        txtnama = new javax.swing.JTextField();
+        cbJenis = new javax.swing.JComboBox<>();
+        cbKategoriBrg = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        Tabel1 = new javax.swing.JTable();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
+        cbCariKategori = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -99,50 +109,50 @@ public class home extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 0, 102));
         jPanel2.setLayout(null);
 
-        jButton1.setText("Simpan");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Btn_Simpan.setText("Simpan");
+        Btn_Simpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                Btn_SimpanActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1);
-        jButton1.setBounds(30, 40, 90, 23);
+        jPanel2.add(Btn_Simpan);
+        Btn_Simpan.setBounds(30, 40, 90, 23);
 
-        jButton2.setText("Ubah");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Btn_Ubah.setText("Ubah");
+        Btn_Ubah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                Btn_UbahActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton2);
-        jButton2.setBounds(30, 110, 90, 23);
+        jPanel2.add(Btn_Ubah);
+        Btn_Ubah.setBounds(30, 110, 90, 23);
 
-        jButton3.setText("Bersihkan");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        Btn_Bersih.setText("Bersihkan");
+        Btn_Bersih.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                Btn_BersihActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton3);
-        jButton3.setBounds(30, 170, 90, 23);
+        jPanel2.add(Btn_Bersih);
+        Btn_Bersih.setBounds(30, 170, 90, 23);
 
-        jButton4.setText("Hapus");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        Btn_Hapus.setText("Hapus");
+        Btn_Hapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                Btn_HapusActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton4);
-        jButton4.setBounds(30, 240, 90, 23);
+        jPanel2.add(Btn_Hapus);
+        Btn_Hapus.setBounds(30, 240, 90, 23);
 
-        jButton5.setText("Keluar");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        Btn_Keluar.setText("Keluar");
+        Btn_Keluar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                Btn_KeluarActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton5);
-        jButton5.setBounds(30, 310, 90, 23);
+        jPanel2.add(Btn_Keluar);
+        Btn_Keluar.setBounds(30, 310, 90, 23);
 
         getContentPane().add(jPanel2);
         jPanel2.setBounds(0, 70, 140, 520);
@@ -151,33 +161,53 @@ public class home extends javax.swing.JFrame {
         jPanel3.setLayout(null);
 
         jPanel4.setLayout(null);
-        jPanel4.add(jTextField1);
-        jTextField1.setBounds(110, 180, 190, 20);
+        jPanel4.add(txtharga);
+        txtharga.setBounds(110, 180, 190, 20);
 
-        Kode.addActionListener(new java.awt.event.ActionListener() {
+        txtkode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                KodeActionPerformed(evt);
+                txtkodeActionPerformed(evt);
             }
         });
-        jPanel4.add(Kode);
-        Kode.setBounds(110, 30, 190, 20);
-        jPanel4.add(Nama);
-        Nama.setBounds(110, 60, 190, 20);
+        jPanel4.add(txtkode);
+        txtkode.setBounds(110, 30, 190, 20);
+        jPanel4.add(txtnama);
+        txtnama.setBounds(110, 60, 190, 20);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel4.add(jComboBox2);
-        jComboBox2.setBounds(110, 140, 180, 30);
+        cbJenis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel4.add(cbJenis);
+        cbJenis.setBounds(110, 140, 180, 30);
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel4.add(jComboBox3);
-        jComboBox3.setBounds(110, 100, 180, 30);
+        cbKategoriBrg.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel4.add(cbKategoriBrg);
+        cbKategoriBrg.setBounds(110, 100, 180, 30);
+
+        jLabel5.setText("Kode Barang");
+        jPanel4.add(jLabel5);
+        jLabel5.setBounds(30, 30, 70, 14);
+
+        jLabel6.setText("Nama Barang");
+        jPanel4.add(jLabel6);
+        jLabel6.setBounds(30, 60, 70, 14);
+
+        jLabel7.setText("Kategori Barang");
+        jPanel4.add(jLabel7);
+        jLabel7.setBounds(20, 110, 80, 14);
+
+        jLabel8.setText("Jenis Packaging");
+        jPanel4.add(jLabel8);
+        jLabel8.setBounds(20, 150, 80, 14);
+
+        jLabel9.setText("Harga");
+        jPanel4.add(jLabel9);
+        jLabel9.setBounds(30, 180, 29, 14);
 
         jPanel3.add(jPanel4);
         jPanel4.setBounds(20, 20, 560, 230);
 
         jPanel5.setLayout(null);
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        Tabel1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -188,7 +218,7 @@ public class home extends javax.swing.JFrame {
                 "Kode Barang", "Nama Barang", "Kategori", "Packaging", "Harga"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(Tabel1);
 
         jPanel5.add(jScrollPane2);
         jScrollPane2.setBounds(10, 20, 530, 170);
@@ -209,14 +239,14 @@ public class home extends javax.swing.JFrame {
         jPanel3.add(jLabel4);
         jLabel4.setBounds(60, 260, 220, 30);
 
-        jButton6.setText("cari");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        cbCariKategori.setText("cari");
+        cbCariKategori.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                cbCariKategoriActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton6);
-        jButton6.setBounds(490, 260, 49, 23);
+        jPanel3.add(cbCariKategori);
+        cbCariKategori.setBounds(490, 260, 49, 23);
 
         getContentPane().add(jPanel3);
         jPanel3.setBounds(140, 70, 610, 520);
@@ -228,43 +258,42 @@ public class home extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void KodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KodeActionPerformed
+    private void txtkodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtkodeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_KodeActionPerformed
+    }//GEN-LAST:event_txtkodeActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void Btn_SimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_SimpanActionPerformed
         // TODO add your handling code here:
         ctoko.SimpanData();
         ctoko.isiTable();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_Btn_SimpanActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void Btn_UbahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_UbahActionPerformed
         // TODO add your handling code here:
         ctoko.Ubah();
         ctoko.isiTable();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_Btn_UbahActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void Btn_BersihActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_BersihActionPerformed
         // TODO add your handling code here:
         ctoko.Reset();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_Btn_BersihActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void Btn_HapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_HapusActionPerformed
         // TODO add your handling code here:
         ctoko.Hapus();
         ctoko.isiTable();
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_Btn_HapusActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void Btn_KeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_KeluarActionPerformed
         // TODO add your handling code here:
         dispose();
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_Btn_KeluarActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void cbCariKategoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbCariKategoriActionPerformed
         // TODO add your handling code here:
-        ctoko.CariKategori();
-        ctoko.isiTable();
-    }//GEN-LAST:event_jButton6ActionPerformed
+    
+    }//GEN-LAST:event_cbCariKategoriActionPerformed
 
     /**
      * @param args the command line arguments
@@ -302,21 +331,25 @@ public class home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Kode;
-    private javax.swing.JTextField Nama;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton Btn_Bersih;
+    private javax.swing.JButton Btn_Hapus;
+    private javax.swing.JButton Btn_Keluar;
+    private javax.swing.JButton Btn_Simpan;
+    private javax.swing.JButton Btn_Ubah;
+    private javax.swing.JTable Tabel1;
+    private javax.swing.JButton cbCariKategori;
+    private javax.swing.JComboBox<String> cbJenis;
+    private javax.swing.JComboBox<String> cbKategoriBrg;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -325,8 +358,46 @@ public class home extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField txtharga;
+    private javax.swing.JTextField txtkode;
+    private javax.swing.JTextField txtnama;
     // End of variables declaration//GEN-END:variables
+
+ public JTextField getTxtKode(){
+        return txtkode;
+    }
+    public JTextField getTxtNama(){
+        return txtnama;
+    }
+    public JTextField getTxtHarga(){
+        return txtharga;
+    }
+    public JComboBox getCbKategori(){
+        return cbKategoriBrg;
+    }
+    public JComboBox getCbJenis(){
+        return cbJenis;
+    }
+   
+    public JButton getButtonHapus(){
+        return Btn_Hapus;
+    }
+    
+    public JButton getButtonBersih(){
+        return Btn_Bersih;
+    }
+    public JButton getButtonSimpan(){
+        return Btn_Simpan;
+    }
+    public JButton getButtonUbah(){
+        return Btn_Ubah;
+    }
+    public JButton getButtonKeluar(){
+        return Btn_Keluar;
+    }
+    public JTable getTableData(){
+        return Tabel1;
+    }
+
 
 }

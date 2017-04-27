@@ -24,6 +24,7 @@ public class login extends javax.swing.JFrame {
      */
     public login() {
         initComponents();
+        
     }
 
     /**
@@ -35,78 +36,81 @@ public class login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jTextField1 = new javax.swing.JTextField();
+        jj = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtpass = new javax.swing.JTextField();
         txtnama = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        txtpass = new javax.swing.JTextField();
+
+        jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jPanel1.setLayout(null);
+        jj.setLayout(null);
 
-        jButton1.setText("Sign Up");
-        jPanel1.add(jButton1);
-        jButton1.setBounds(130, 40, 73, 23);
-
-        jButton2.setText("Sign In");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Sign In");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2);
-        jButton2.setBounds(200, 40, 73, 23);
+        jj.add(jButton1);
+        jButton1.setBounds(127, 34, 65, 23);
+
+        jButton2.setText("Sign Up");
+        jj.add(jButton2);
+        jButton2.setBounds(260, 40, 73, 23);
 
         jLabel1.setText("Password");
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(50, 200, 90, 20);
+        jj.add(jLabel1);
+        jLabel1.setBounds(40, 160, 80, 20);
 
         jLabel2.setText("Username");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(50, 100, 90, 20);
-        jPanel1.add(txtpass);
-        txtpass.setBounds(50, 230, 170, 30);
-        jPanel1.add(txtnama);
-        txtnama.setBounds(50, 130, 170, 30);
+        jj.add(jLabel2);
+        jLabel2.setBounds(40, 120, 80, 20);
+        jj.add(txtnama);
+        txtnama.setBounds(140, 120, 140, 30);
+        jj.add(txtpass);
+        txtpass.setBounds(140, 170, 140, 30);
 
-        jButton3.setText("exit");
-        jPanel1.add(jButton3);
-        jButton3.setBounds(320, 260, 51, 23);
-
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 420, 305);
+        getContentPane().add(jj);
+        jj.setBounds(0, 0, 400, 300);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         Connection connection;
         PreparedStatement ps;
         try {
-        connection = DriverManager.getConnection("jdbc:mysql://localhost/toko?zeroDateTimeBehavior=convertToNull", "root", "");ps = connection.prepareStatement("SELECT * FROM`tb_akun` WHERE `username` = ? AND `password` = ?");
-        ps.setString(1, txtnama.getText());
-        ps.setString(2, txtpass.getText());
-        ResultSet result =ps.executeQuery();
-        if(result.next()){
-        new home().show();
-        user = txtnama.getText();//perlu deklarasi userdiclass utama.
-        this.dispose();
-        }
-        else{
-        JOptionPane.showMessageDialog(rootPane,"Salah!");
-        txtpass.setText("");
-        txtnama.requestFocus();
- }
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/toko?zeroDateTimeBehavior=convertToNull", "root", "");
+            ps = connection.prepareStatement("SELECT * FROM `tb_akun` WHERE `username` = ? AND `password` = ?");
+            ps.setString(1, txtnama.getText());
+           ps.setString(2, txtpass.getText());
+            ResultSet result =ps.executeQuery();
+            if(result.next()){
+                new home().show();
+                user = txtnama.getText(); //perlu deklarasi user diclass utama.
+                this.dispose();
+            }
+            else{
+                JOptionPane.showMessageDialog(rootPane, "Salah!");
+                txtpass.setText("");
+                                txtnama.requestFocus();
+            }
         }catch (SQLException ex){
-        JOptionPane.showMessageDialog(rootPane,"Gagal!");
-    }//GEN-LAST:event_jButton2ActionPerformed
+            JOptionPane.showMessageDialog(rootPane,"Gagal!");
+
     }
+
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -145,10 +149,10 @@ public class login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPanel jj;
     private javax.swing.JTextField txtnama;
     private javax.swing.JTextField txtpass;
     // End of variables declaration//GEN-END:variables
